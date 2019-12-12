@@ -9,7 +9,7 @@
 import Foundation
 
 protocol SudokuGameManagerDelegate {
-    func createBoard(_ updateBoard: SudokuGameManager, sudokuBoard: SudokuModel)
+    func createBoard(_ updateBoard: SudokuGameManager, sudokuBoard: [SudokuModel])
     func failedWithError(error: Error)
 }
 
@@ -52,24 +52,44 @@ struct SudokuGameManager {
         }
     }
     
-    func parseJSON(sudokuData: Data) -> SudokuModel? {
+    func parseJSON(sudokuData: Data) -> [SudokuModel]? {
 //        Creating decoder
         let decoder = JSONDecoder()
         do {
 //            Attempts to decode the data
             let decodedData = try decoder.decode(SudokuData.self, from: sudokuData)
             
-//            Creates an a 2D array of size 4x4 with 0's
-            var sudoku = Array(repeating: Array(repeating: "", count: 4), count: 4)
+//            Initializing the Board which will be a 2D Array
+            var sudoku = [[SudokuModel]]()
             
+//            Sets the Board to 4x4 starting cells
+            for _ in 0...3 {
+                sudoku.append([
+                    SudokuModel(values: ""),
+                    SudokuModel(values: ""),
+                    SudokuModel(values: ""),
+                    SudokuModel(values: "")
+                ])
+            }
+
 //            Will go thru each item/object of the decodedData
 //            Use the object's x and y to set it's data
             for values in decodedData.squares {
-                sudoku[values.x][values.y] = String(values.value)
+                sudoku[values.x][values.y].values = String(values.value)
             }
             
-//            Returns the whole 2D array which is the board
-            return SudokuModel(values: sudoku)
+            var flattenedSudokuBoard = sudoku.flatMap { $0 }
+            
+            for i in 0...15 {
+                if flattenedSudokuBoard[i].values == "" {
+                    flattenedSudokuBoard[i].selectable = true
+                } else {
+                    flattenedSudokuBoard[i].selectable = false
+                }
+            }
+            
+//            Returns the flattenedSudokuBoard
+            return flattenedSudokuBoard
         } catch {
             delegate?.failedWithError(error: error)
             return nil

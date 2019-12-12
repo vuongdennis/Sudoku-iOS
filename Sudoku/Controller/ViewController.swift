@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, SudokuGameManagerDelegate {
-
+    
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
@@ -43,39 +43,26 @@ class ViewController: UIViewController, SudokuGameManagerDelegate {
         sudokuGameManager.fetchSudoku(level: 1)
     }
     
-//MARK: - SudokuGameManagerDelegate functions
+    @IBAction func buttonCellPressed(_ sender: UIButton) {
+        var update = 0
+        update += 1
+        print(update)
+    }
     
-    func createBoard(_ updateBoard: SudokuGameManager, sudokuBoard: SudokuModel) {
+    //MARK: - SudokuGameManagerDelegate functions
+    
+    func createBoard(_ updateBoard: SudokuGameManager, sudokuBoard: [SudokuModel]) {
 //        DispatchQueue tells it to go onto the next step as it updates in the background
         DispatchQueue.main.async {
-            var flatten = sudokuBoard.values.flatMap { $0 }
-            
             for i in 0...15 {
-                self.buttonBoard[i]!.setTitle(flatten[i], for: .normal)
+                self.buttonBoard[i]!.setTitle(sudokuBoard[i].values, for: .normal)
                 
-//                if flatten[i].values == "" {
-//                    flatten[i].selectable = true
-//                } else {
-//                    flatten[i].selectable = false
-//                }
-
+                if sudokuBoard[i].selectable! {
+                    self.buttonBoard[i]!.isEnabled = true
+                } else {
+                    self.buttonBoard[i]!.isEnabled = false
+                }
             }
-//            self.button1.setTitle(sudokuBoard.values[0][0], for: .normal)
-//            self.button2.setTitle(sudokuBoard.values[0][1], for: .normal)
-//            self.button3.setTitle(sudokuBoard.values[0][2], for: .normal)
-//            self.button4.setTitle(sudokuBoard.values[0][3], for: .normal)
-//            self.button5.setTitle(sudokuBoard.values[1][0], for: .normal)
-//            self.button6.setTitle(sudokuBoard.values[1][1], for: .normal)
-//            self.button7.setTitle(sudokuBoard.values[1][2], for: .normal)
-//            self.button8.setTitle(sudokuBoard.values[1][3], for: .normal)
-//            self.button9.setTitle(sudokuBoard.values[2][0], for: .normal)
-//            self.button10.setTitle(sudokuBoard.values[2][1], for: .normal)
-//            self.button11.setTitle(sudokuBoard.values[2][2], for: .normal)
-//            self.button12.setTitle(sudokuBoard.values[2][3], for: .normal)
-//            self.button13.setTitle(sudokuBoard.values[3][0], for: .normal)
-//            self.button14.setTitle(sudokuBoard.values[3][1], for: .normal)
-//            self.button15.setTitle(sudokuBoard.values[3][2], for: .normal)
-//            self.button16.setTitle(sudokuBoard.values[3][3], for: .normal)
         }
     }
     
