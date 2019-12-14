@@ -96,4 +96,42 @@ struct SudokuGameManager {
             return nil
         }
     }
+    
+//MARK: - Game Logic
+    func gameLogic(board: [[Int]]) -> Bool{
+//        Checks to see duplicates in each row and column
+        for i in 0...3 {
+            let rowValue = checkRow(board: board, row: i)
+            let colValue = checkCol(board: board, col: i)
+            
+            if rowValue != true || colValue != true {
+                return false
+            }
+        }
+        return true
+    }
+    
+    func checkRow(board: [[Int]], row: Int) -> Bool {
+        var setValues: Set = [1, 2, 3, 4]
+        for i in 0...3 {
+            if setValues.contains(board[row][i]) {
+                setValues.remove(board[row][i])
+            } else {
+                return false
+            }
+        }
+        return true
+    }
+    
+    func checkCol(board: [[Int]], col: Int) -> Bool {
+        var setValues: Set = [1, 2, 3, 4]
+        for i in 0...3 {
+            if setValues.contains(board[i][col]) {
+                setValues.remove(board[i][col])
+            } else {
+                return false
+            }
+        }
+        return true
+    }
 }

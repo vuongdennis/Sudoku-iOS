@@ -23,7 +23,28 @@ class ViewController: UIViewController, SudokuGameManagerDelegate {
         sudokuGameManager.fetchSudoku(level: 1)
     }
     
-//MARK: - USER Input Functionality
+    @IBAction func doneButtonPressed(_ sender: UIButton) {
+        var updatedBoard = [[Int]]()
+        for _ in 0...3 {
+            updatedBoard.append([0, 0, 0, 0])
+        }
+        
+        var counter = 0
+        for i in 0...3 {
+            for j in 0...3 {
+                updatedBoard[i][j] = Int(sudokuButtonBoard[counter].currentTitle!) ?? 0
+                counter += 1
+            }
+        }
+        
+        if sudokuGameManager.gameLogic(board: updatedBoard) == true {
+            print("Success")
+        } else {
+            print("fail")
+        }
+    }
+    
+    //MARK: - USER Input Functionality
 
 //    Will unselect the cell if you press the background
     @IBAction func backgroundButton(_ sender: UIButton) {
@@ -64,8 +85,8 @@ class ViewController: UIViewController, SudokuGameManagerDelegate {
             for i in 0...15 {
                 self.sudokuButtonBoard[i].setTitle(sudokuBoardValues[i].values, for: .normal)
                 
-                //                Sees if the cell is selectable.
-                //                If so then allow users to be able to click on it.
+                //Sees if the cell is selectable.
+                //If so then allow users to be able to click on it.
                 if sudokuBoardValues[i].selectable! {
                     self.sudokuButtonBoard[i].isEnabled = true
                 } else {
