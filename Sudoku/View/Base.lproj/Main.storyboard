@@ -15,6 +15,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="cVq-EC-XlY" userLabel="Background Image View">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6k-WM-34D" userLabel="Background Button">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <state key="normal" title="Button"/>
@@ -44,7 +47,7 @@
                                                                             <constraint firstAttribute="width" constant="75" id="eed-uU-NWZ"/>
                                                                             <constraint firstAttribute="height" constant="75" id="hAR-br-gjz"/>
                                                                         </constraints>
-                                                                        <state key="normal" title="1">
+                                                                        <state key="normal">
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
@@ -58,7 +61,7 @@
                                                                             <constraint firstAttribute="width" constant="75" id="gaG-qk-U9n"/>
                                                                             <constraint firstAttribute="height" constant="75" id="hiw-5L-BQn"/>
                                                                         </constraints>
-                                                                        <state key="normal" title="2">
+                                                                        <state key="normal">
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
@@ -77,7 +80,7 @@
                                                                             <constraint firstAttribute="height" constant="75" id="0jP-VU-SsL"/>
                                                                             <constraint firstAttribute="width" constant="75" id="Ail-hh-gSg"/>
                                                                         </constraints>
-                                                                        <state key="normal" title="3">
+                                                                        <state key="normal">
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
@@ -91,7 +94,7 @@
                                                                             <constraint firstAttribute="height" constant="75" id="4TJ-mw-d9P"/>
                                                                             <constraint firstAttribute="width" constant="75" id="9Ti-B3-1dh"/>
                                                                         </constraints>
-                                                                        <state key="normal" title="4">
+                                                                        <state key="normal">
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
@@ -115,7 +118,7 @@
                                                                             <constraint firstAttribute="width" constant="75" id="JlG-lq-zY5"/>
                                                                             <constraint firstAttribute="height" constant="75" id="Rkj-PO-cLL"/>
                                                                         </constraints>
-                                                                        <state key="normal" title="1">
+                                                                        <state key="normal">
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
@@ -129,7 +132,7 @@
                                                                             <constraint firstAttribute="width" constant="75" id="BOS-nh-xfG"/>
                                                                             <constraint firstAttribute="height" constant="75" id="uUZ-rO-Cbd"/>
                                                                         </constraints>
-                                                                        <state key="normal" title="2">
+                                                                        <state key="normal">
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
@@ -148,7 +151,7 @@
                                                                             <constraint firstAttribute="height" constant="75" id="Wqv-pN-cfz"/>
                                                                             <constraint firstAttribute="width" constant="75" id="k8E-qL-YNb"/>
                                                                         </constraints>
-                                                                        <state key="normal" title="3">
+                                                                        <state key="normal">
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
@@ -162,7 +165,7 @@
                                                                             <constraint firstAttribute="height" constant="75" id="Ud2-Rl-W2z"/>
                                                                             <constraint firstAttribute="width" constant="75" id="c9N-Rc-ySd"/>
                                                                         </constraints>
-                                                                        <state key="normal" title="4">
+                                                                        <state key="normal">
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
@@ -191,7 +194,7 @@
                                                                             <constraint firstAttribute="height" constant="75" id="2xr-qf-4b7"/>
                                                                             <constraint firstAttribute="width" constant="75" id="OPS-P2-UfH"/>
                                                                         </constraints>
-                                                                        <state key="normal" title="1">
+                                                                        <state key="normal">
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
@@ -205,7 +208,7 @@
                                                                             <constraint firstAttribute="width" constant="75" id="Eev-Sz-Tat"/>
                                                                             <constraint firstAttribute="height" constant="75" id="HR2-Sq-z1M"/>
                                                                         </constraints>
-                                                                        <state key="normal" title="2">
+                                                                        <state key="normal">
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
@@ -224,7 +227,7 @@
                                                                             <constraint firstAttribute="width" constant="75" id="GRV-dU-6OK"/>
                                                                             <constraint firstAttribute="height" constant="75" id="Qvx-5Q-5uM"/>
                                                                         </constraints>
-                                                                        <state key="normal" title="3">
+                                                                        <state key="normal">
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
@@ -238,7 +241,7 @@
                                                                             <constraint firstAttribute="height" constant="75" id="AFB-F9-7eA"/>
                                                                             <constraint firstAttribute="width" constant="75" id="ldM-6h-84e"/>
                                                                         </constraints>
-                                                                        <state key="normal" title="4">
+                                                                        <state key="normal">
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
@@ -262,7 +265,7 @@
                                                                             <constraint firstAttribute="width" constant="75" id="Jip-j9-pZR"/>
                                                                             <constraint firstAttribute="height" constant="75" id="XXO-zJ-fYa"/>
                                                                         </constraints>
-                                                                        <state key="normal" title="1">
+                                                                        <state key="normal">
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
@@ -276,7 +279,7 @@
                                                                             <constraint firstAttribute="height" constant="75" id="1Po-z2-PYe"/>
                                                                             <constraint firstAttribute="width" constant="75" id="PyH-cg-6f0"/>
                                                                         </constraints>
-                                                                        <state key="normal" title="2">
+                                                                        <state key="normal">
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
@@ -295,7 +298,7 @@
                                                                             <constraint firstAttribute="width" constant="75" id="eov-DW-8gC"/>
                                                                             <constraint firstAttribute="height" constant="75" id="ge3-Dq-OJk"/>
                                                                         </constraints>
-                                                                        <state key="normal" title="3">
+                                                                        <state key="normal">
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
@@ -309,7 +312,7 @@
                                                                             <constraint firstAttribute="height" constant="75" id="6UH-Na-zHa"/>
                                                                             <constraint firstAttribute="width" constant="75" id="P6M-Mw-lWY"/>
                                                                         </constraints>
-                                                                        <state key="normal" title="4">
+                                                                        <state key="normal">
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
@@ -406,13 +409,17 @@
                         <constraints>
                             <constraint firstItem="Vzc-qI-ub7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="150" id="8iI-ds-B82"/>
                             <constraint firstItem="7K4-Hl-FSN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="987-WL-AoC"/>
+                            <constraint firstAttribute="bottom" secondItem="cVq-EC-XlY" secondAttribute="bottom" id="EC0-eO-q1m"/>
                             <constraint firstItem="y6k-WM-34D" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="EK7-PZ-o1E"/>
+                            <constraint firstItem="cVq-EC-XlY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Iwk-ND-ili"/>
                             <constraint firstItem="7K4-Hl-FSN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="250" id="PNv-ix-DLJ"/>
+                            <constraint firstItem="cVq-EC-XlY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Pbe-hC-ZRi"/>
                             <constraint firstItem="y6k-WM-34D" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Qdg-sV-l28"/>
                             <constraint firstItem="y6k-WM-34D" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="WcN-Qz-c37"/>
                             <constraint firstItem="Cvk-Xf-XYL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-75" id="bO7-qO-zHX"/>
                             <constraint firstItem="y6k-WM-34D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bQQ-HV-67Z"/>
                             <constraint firstItem="Cvk-Xf-XYL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fqB-9I-7L1"/>
+                            <constraint firstItem="cVq-EC-XlY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vIy-0q-6Qv"/>
                             <constraint firstItem="Vzc-qI-ub7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yy9-YZ-Zlr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -442,7 +449,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="109.23913043478262"/>
+            <point key="canvasLocation" x="137.68115942028987" y="109.15178571428571"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background2" width="1000" height="1000"/>
+    </resources>
 </document>

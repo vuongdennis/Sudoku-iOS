@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SudokuModel {
+struct SudokuCellModel {
 //    Value of the Cell.
     var values: String
 //    If the cell is selectable

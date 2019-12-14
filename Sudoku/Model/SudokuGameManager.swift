@@ -9,8 +9,8 @@
 import Foundation
 
 protocol SudokuGameManagerDelegate {
-    func createBoard(sudokuBoardValues: [SudokuModel])
-    func gameLogic(sudokuBoard: [SudokuModel])
+    func createBoard(sudokuBoardValues: [SudokuCellModel])
+    func gameLogic(sudokuBoard: [SudokuCellModel])
     func failedWithError(error: Error)
 }
 
@@ -53,7 +53,7 @@ struct SudokuGameManager {
         }
     }
     
-    func parseJSON(sudokuData: Data) -> [SudokuModel]? {
+    func parseJSON(sudokuData: Data) -> [SudokuCellModel]? {
 //        Creating decoder
         let decoder = JSONDecoder()
         do {
@@ -61,15 +61,15 @@ struct SudokuGameManager {
             let decodedData = try decoder.decode(SudokuData.self, from: sudokuData)
             
 //            Initializing the Board which will be a 2D Array
-            var sudoku = [[SudokuModel]]()
+            var sudoku = [[SudokuCellModel]]()
             
 //            Sets the Board to 4x4 starting cells
             for _ in 0...3 {
                 sudoku.append([
-                    SudokuModel(values: ""),
-                    SudokuModel(values: ""),
-                    SudokuModel(values: ""),
-                    SudokuModel(values: "")
+                    SudokuCellModel(values: ""),
+                    SudokuCellModel(values: ""),
+                    SudokuCellModel(values: ""),
+                    SudokuCellModel(values: "")
                 ])
             }
 

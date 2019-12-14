@@ -74,12 +74,13 @@ class ViewController: UIViewController, SudokuGameManagerDelegate {
     @IBAction func userInteractionButtonPressed(_ sender: UIButton) {
         if selectedCell != nil {
             selectedCell?.setTitle(sender.currentTitle, for: .normal)
+            selectedCell?.backgroundColor = .white
         }
     }
     
 //MARK: - SudokuGameManagerDelegate functions
     
-    func createBoard(sudokuBoardValues: [SudokuModel]) {
+    func createBoard(sudokuBoardValues: [SudokuCellModel]) {
         //        DispatchQueue tells it to go onto the next step as it updates in the background
         DispatchQueue.main.async {
             for i in 0...15 {
@@ -101,7 +102,7 @@ class ViewController: UIViewController, SudokuGameManagerDelegate {
         }
     }
     
-    func gameLogic(sudokuBoard: [SudokuModel]) {
+    func gameLogic(sudokuBoard: [SudokuCellModel]) {
     }
     
     func failedWithError(error: Error) {
