@@ -9,7 +9,8 @@
 import Foundation
 
 protocol SudokuGameManagerDelegate {
-    func createBoard(_ updateBoard: SudokuGameManager, sudokuBoard: [SudokuModel])
+    func createBoard(sudokuBoardValues: [SudokuModel])
+    func gameLogic(sudokuBoard: [SudokuModel])
     func failedWithError(error: Error)
 }
 
@@ -41,7 +42,7 @@ struct SudokuGameManager {
                 
                 if let passedData = data {
                     if let sudokuBoard = self.parseJSON(sudokuData: passedData) {
-                        self.delegate?.createBoard(self, sudokuBoard: sudokuBoard)
+                        self.delegate?.createBoard(sudokuBoardValues: sudokuBoard)
                     }
 //                    This print() prints out the parsedData in a readable textformat
                     //print("JSON String: \(String(data: passedData, encoding: .utf8))")
@@ -80,6 +81,7 @@ struct SudokuGameManager {
             
             var flattenedSudokuBoard = sudoku.flatMap { $0 }
             
+//            Goes thru the board. If it's selectable then mark true else false
             for i in 0...15 {
                 if flattenedSudokuBoard[i].values == "" {
                     flattenedSudokuBoard[i].selectable = true
@@ -87,7 +89,6 @@ struct SudokuGameManager {
                     flattenedSudokuBoard[i].selectable = false
                 }
             }
-            
 //            Returns the flattenedSudokuBoard
             return flattenedSudokuBoard
         } catch {

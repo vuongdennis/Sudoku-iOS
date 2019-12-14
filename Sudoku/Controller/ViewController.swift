@@ -9,32 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController, SudokuGameManagerDelegate {
-    
-    @IBOutlet weak var button1: UIButton!
-    @IBOutlet weak var button2: UIButton!
-    @IBOutlet weak var button3: UIButton!
-    @IBOutlet weak var button4: UIButton!
-    @IBOutlet weak var button5: UIButton!
-    @IBOutlet weak var button6: UIButton!
-    @IBOutlet weak var button7: UIButton!
-    @IBOutlet weak var button8: UIButton!
-    @IBOutlet weak var button9: UIButton!
-    @IBOutlet weak var button10: UIButton!
-    @IBOutlet weak var button11: UIButton!
-    @IBOutlet weak var button12: UIButton!
-    @IBOutlet weak var button13: UIButton!
-    @IBOutlet weak var button14: UIButton!
-    @IBOutlet weak var button15: UIButton!
-    @IBOutlet weak var button16: UIButton!
+
+    @IBOutlet var sudokuButtonBoard: [UIButton]!
+    @IBOutlet var userInteractionButtons: [UIButton]!
     
     var sudokuGameManager = SudokuGameManager()
-//    Lazy is when var is null until its accessed.
-    lazy var buttonBoard = [
-        button1, button2, button3, button4,
-        button5, button6, button7, button8,
-        button9, button10, button11, button12,
-        button13, button14, button15, button16
-    ]
+    var selectedCell: UIButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,28 +22,61 @@ class ViewController: UIViewController, SudokuGameManagerDelegate {
         sudokuGameManager.delegate = self
         sudokuGameManager.fetchSudoku(level: 1)
     }
-    
-    @IBAction func buttonCellPressed(_ sender: UIButton) {
-        var update = 0
-        update += 1
-        print(update)
+
+//    Will unselect the cell if you press the background
+    @IBAction func backgroundButton(_ sender: UIButton) {
+        if selectedCell != nil {
+            selectedCell?.backgroundColor = .white
+        }
     }
     
-    //MARK: - SudokuGameManagerDelegate functions
+    @IBAction func sudokuButtonBoardPressed(_ sender: UIButton) {
+//        If selectedCell isn't empty. Make the old selected Cell white
+        if selectedCell != nil {
+            selectedCell?.backgroundColor = .white
+        }
+//        If selectedCell is the same as the sender. Meaning the same button pressed.
+//        Make it white
+        if selectedCell == sender {
+            selectedCell?.backgroundColor = .white
+//            If it's different. Orange.
+        } else {
+            selectedCell = sender
+            selectedCell?.backgroundColor = .systemOrange
+        }
+    }
+
+    @IBAction func userInteractionButtonPressed(_ sender: UIButton) {
+        if selectedCell != nil {
+            selectedCell?.setTitle(sender.currentTitle, for: .normal)
+        }
+    }
     
-    func createBoard(_ updateBoard: SudokuGameManager, sudokuBoard: [SudokuModel]) {
-//        DispatchQueue tells it to go onto the next step as it updates in the background
+//MARK: - SudokuGameManagerDelegate functions
+    
+    func createBoard(sudokuBoardValues: [SudokuModel]) {
+        //        DispatchQueue tells it to go onto the next step as it updates in the background
         DispatchQueue.main.async {
             for i in 0...15 {
-                self.buttonBoard[i]!.setTitle(sudokuBoard[i].values, for: .normal)
+                self.sudokuButtonBoard[i].setTitle(sudokuBoardValues[i].values, for: .normal)
                 
-                if sudokuBoard[i].selectable! {
-                    self.buttonBoard[i]!.isEnabled = true
+                //                Sees if the cell is selectable.
+                //                If so then allow users to be able to click on it.
+                if sudokuBoardValues[i].selectable! {
+                    self.sudokuButtonBoard[i].isEnabled = true
                 } else {
-                    self.buttonBoard[i]!.isEnabled = false
+                    self.sudokuButtonBoard[i].isEnabled = false
+                }
+                
+                //Sets the cells without values to a different color than the partially filled
+                if sudokuBoardValues[i].values == "" {
+                    self.sudokuButtonBoard[i].setTitleColor(.systemPink, for: .normal)
                 }
             }
         }
+    }
+    
+    func gameLogic(sudokuBoard: [SudokuModel]) {
     }
     
     func failedWithError(error: Error) {

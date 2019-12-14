@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,11 +12,18 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sudoku" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6k-WM-34D" userLabel="Background Button">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="backgroundButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TSM-MY-N7d"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cvk-Xf-XYL" userLabel="Sudoku View">
-                                <rect key="frame" x="30.5" y="101.5" width="314" height="314"/>
+                                <rect key="frame" x="50" y="136" width="314" height="314"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="MFI-Wu-jtV">
                                         <rect key="frame" x="4" y="4" width="306" height="306"/>
@@ -30,7 +37,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="03i-9F-lgM" userLabel="1st Row">
                                                                 <rect key="frame" x="0.0" y="0.0" width="151" height="75"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcP-xn-6xH">
+                                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcP-xn-6xH">
                                                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
@@ -41,10 +48,10 @@
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
-                                                                            <action selector="buttonCellPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AFx-QW-EFv"/>
+                                                                            <action selector="sudokuButtonBoardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AFx-QW-EFv"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rW-wX-25w">
+                                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rW-wX-25w">
                                                                         <rect key="frame" x="76" y="0.0" width="75" height="75"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
@@ -55,7 +62,7 @@
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
-                                                                            <action selector="buttonCellPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="42q-SH-U4T"/>
+                                                                            <action selector="sudokuButtonBoardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="42q-SH-U4T"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -63,7 +70,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="mfK-eF-55P" userLabel="2nd Row">
                                                                 <rect key="frame" x="0.0" y="76" width="151" height="75"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfA-FZ-SF8">
+                                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfA-FZ-SF8">
                                                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
@@ -74,10 +81,10 @@
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
-                                                                            <action selector="buttonCellPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rEK-Lw-m2p"/>
+                                                                            <action selector="sudokuButtonBoardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rEK-Lw-m2p"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7FY-KX-QzC">
+                                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7FY-KX-QzC">
                                                                         <rect key="frame" x="76" y="0.0" width="75" height="75"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
@@ -88,7 +95,7 @@
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
-                                                                            <action selector="buttonCellPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mVP-LV-hc1"/>
+                                                                            <action selector="sudokuButtonBoardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mVP-LV-hc1"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -101,7 +108,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZZS-ep-hGe" userLabel="1st Row">
                                                                 <rect key="frame" x="0.0" y="0.0" width="151" height="75"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Spk-kz-0wa">
+                                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Spk-kz-0wa">
                                                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
@@ -112,10 +119,10 @@
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
-                                                                            <action selector="buttonCellPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wxc-Yw-ID3"/>
+                                                                            <action selector="sudokuButtonBoardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wxc-Yw-ID3"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVs-C9-nQx">
+                                                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVs-C9-nQx">
                                                                         <rect key="frame" x="76" y="0.0" width="75" height="75"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
@@ -126,7 +133,7 @@
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
-                                                                            <action selector="buttonCellPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rcp-RI-CM4"/>
+                                                                            <action selector="sudokuButtonBoardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rcp-RI-CM4"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -134,7 +141,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="JbF-dd-2Bm" userLabel="2nd Row">
                                                                 <rect key="frame" x="0.0" y="76" width="151" height="75"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gel-cl-u2f">
+                                                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gel-cl-u2f">
                                                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
@@ -145,10 +152,10 @@
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
-                                                                            <action selector="buttonCellPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S7s-0Z-h6T"/>
+                                                                            <action selector="sudokuButtonBoardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S7s-0Z-h6T"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mb5-8m-fhV">
+                                                                    <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mb5-8m-fhV">
                                                                         <rect key="frame" x="76" y="0.0" width="75" height="75"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
@@ -159,7 +166,7 @@
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
-                                                                            <action selector="buttonCellPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hht-hP-YCi"/>
+                                                                            <action selector="sudokuButtonBoardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hht-hP-YCi"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -177,7 +184,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="6Fl-gV-b1h" userLabel="1st Row">
                                                                 <rect key="frame" x="0.0" y="0.0" width="151" height="75"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNm-ay-3Pj">
+                                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNm-ay-3Pj">
                                                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
@@ -188,10 +195,10 @@
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
-                                                                            <action selector="buttonCellPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lNW-cv-afY"/>
+                                                                            <action selector="sudokuButtonBoardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lNW-cv-afY"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lds-1p-mKT">
+                                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lds-1p-mKT">
                                                                         <rect key="frame" x="76" y="0.0" width="75" height="75"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
@@ -202,7 +209,7 @@
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
-                                                                            <action selector="buttonCellPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wje-EC-QqR"/>
+                                                                            <action selector="sudokuButtonBoardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wje-EC-QqR"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -210,7 +217,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="pO8-Of-g9s" userLabel="2nd Row">
                                                                 <rect key="frame" x="0.0" y="76" width="151" height="75"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SgT-1y-xmh">
+                                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SgT-1y-xmh">
                                                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
@@ -221,10 +228,10 @@
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
-                                                                            <action selector="buttonCellPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G7l-Zm-g0l"/>
+                                                                            <action selector="sudokuButtonBoardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G7l-Zm-g0l"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQ1-Xa-Cha">
+                                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQ1-Xa-Cha">
                                                                         <rect key="frame" x="76" y="0.0" width="75" height="75"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
@@ -235,7 +242,7 @@
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
-                                                                            <action selector="buttonCellPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bKB-wN-seE"/>
+                                                                            <action selector="sudokuButtonBoardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bKB-wN-seE"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -248,7 +255,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="f6B-PX-CYE" userLabel="1st Row">
                                                                 <rect key="frame" x="0.0" y="0.0" width="151" height="75"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VN1-8H-llm">
+                                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VN1-8H-llm">
                                                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
@@ -259,10 +266,10 @@
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
-                                                                            <action selector="buttonCellPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6l9-sU-1zr"/>
+                                                                            <action selector="sudokuButtonBoardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6l9-sU-1zr"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65d-T9-A34">
+                                                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65d-T9-A34">
                                                                         <rect key="frame" x="76" y="0.0" width="75" height="75"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
@@ -273,7 +280,7 @@
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
-                                                                            <action selector="buttonCellPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gjX-DK-hq0"/>
+                                                                            <action selector="sudokuButtonBoardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gjX-DK-hq0"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -281,7 +288,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="YIy-g7-L4R" userLabel="2nd Row">
                                                                 <rect key="frame" x="0.0" y="76" width="151" height="75"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aV7-yb-wkW">
+                                                                    <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aV7-yb-wkW">
                                                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
@@ -292,10 +299,10 @@
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
-                                                                            <action selector="buttonCellPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AXC-EZ-PSG"/>
+                                                                            <action selector="sudokuButtonBoardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AXC-EZ-PSG"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L8n-GM-S67">
+                                                                    <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L8n-GM-S67">
                                                                         <rect key="frame" x="76" y="0.0" width="75" height="75"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
@@ -306,7 +313,7 @@
                                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
-                                                                            <action selector="buttonCellPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GWI-Dj-TJk"/>
+                                                                            <action selector="sudokuButtonBoardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GWI-Dj-TJk"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -326,36 +333,108 @@
                                     <constraint firstAttribute="width" constant="314" id="jzN-aD-SSF"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Vzc-qI-ub7" userLabel="User Interaction Stack View">
+                                <rect key="frame" x="27" y="500" width="360" height="236"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmR-dw-oqj">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="79n-NU-Cut"/>
+                                            <constraint firstAttribute="width" constant="75" id="SGC-7b-4H6"/>
+                                        </constraints>
+                                        <state key="normal" title="1">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="userInteractionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j3t-J6-6Qu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buC-oQ-R0y">
+                                        <rect key="frame" x="95" y="0.0" width="75" height="75"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="3Xc-pe-jPh"/>
+                                            <constraint firstAttribute="width" constant="75" id="hzX-Wl-ONq"/>
+                                        </constraints>
+                                        <state key="normal" title="2">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="userInteractionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ST8-Z0-8Z6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2u0-Af-AwC">
+                                        <rect key="frame" x="190" y="0.0" width="75" height="75"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="30n-Je-HKK"/>
+                                            <constraint firstAttribute="height" constant="75" id="KQt-pY-UTy"/>
+                                        </constraints>
+                                        <state key="normal" title="3">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="userInteractionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BWR-wo-tse"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRG-Ba-uin">
+                                        <rect key="frame" x="285" y="0.0" width="75" height="75"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="JNI-oP-cq3"/>
+                                            <constraint firstAttribute="height" constant="75" id="uLo-AQ-e3f"/>
+                                        </constraints>
+                                        <state key="normal" title="4">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="userInteractionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fbj-FW-6Ha"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="y6k-WM-34D" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="EK7-PZ-o1E"/>
+                            <constraint firstItem="y6k-WM-34D" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Qdg-sV-l28"/>
                             <constraint firstItem="Cvk-Xf-XYL" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-75" id="Ttb-R1-iqf"/>
+                            <constraint firstItem="Vzc-qI-ub7" firstAttribute="top" secondItem="Cvk-Xf-XYL" secondAttribute="bottom" constant="50" id="Wak-oA-gbd"/>
+                            <constraint firstItem="y6k-WM-34D" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="WcN-Qz-c37"/>
+                            <constraint firstItem="Vzc-qI-ub7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XzU-Vq-2jH"/>
+                            <constraint firstItem="y6k-WM-34D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bQQ-HV-67Z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Vzc-qI-ub7" secondAttribute="bottom" id="dSj-mD-Ijj"/>
                             <constraint firstItem="Cvk-Xf-XYL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ziR-3J-VCT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="button1" destination="hcP-xn-6xH" id="jl6-V1-Ij1"/>
-                        <outlet property="button10" destination="wVs-C9-nQx" id="0FM-Cc-5Oq"/>
-                        <outlet property="button11" destination="VN1-8H-llm" id="Jzl-Oj-qDX"/>
-                        <outlet property="button12" destination="65d-T9-A34" id="wIL-Q2-RRT"/>
-                        <outlet property="button13" destination="Gel-cl-u2f" id="8Tb-yz-Qhz"/>
-                        <outlet property="button14" destination="mb5-8m-fhV" id="6hz-4S-bdr"/>
-                        <outlet property="button15" destination="aV7-yb-wkW" id="jpJ-cf-P33"/>
-                        <outlet property="button16" destination="L8n-GM-S67" id="K0Z-ja-OM8"/>
-                        <outlet property="button2" destination="5rW-wX-25w" id="MZS-pR-zTs"/>
-                        <outlet property="button3" destination="tNm-ay-3Pj" id="epH-qj-ECb"/>
-                        <outlet property="button4" destination="Lds-1p-mKT" id="Dph-eo-LXv"/>
-                        <outlet property="button5" destination="LfA-FZ-SF8" id="Abd-lb-Ynn"/>
-                        <outlet property="button6" destination="7FY-KX-QzC" id="ohK-s2-g6J"/>
-                        <outlet property="button7" destination="SgT-1y-xmh" id="Fwn-8l-n1L"/>
-                        <outlet property="button8" destination="WQ1-Xa-Cha" id="6jH-6r-63O"/>
-                        <outlet property="button9" destination="Spk-kz-0wa" id="0Aw-FY-RRk"/>
+                        <outletCollection property="sudokuButtonBoard" destination="hcP-xn-6xH" collectionClass="NSMutableArray" id="OdD-mk-mkP"/>
+                        <outletCollection property="sudokuButtonBoard" destination="5rW-wX-25w" collectionClass="NSMutableArray" id="nXY-Nb-UV8"/>
+                        <outletCollection property="sudokuButtonBoard" destination="tNm-ay-3Pj" collectionClass="NSMutableArray" id="Agr-gR-9vg"/>
+                        <outletCollection property="sudokuButtonBoard" destination="Lds-1p-mKT" collectionClass="NSMutableArray" id="w22-3b-aFT"/>
+                        <outletCollection property="sudokuButtonBoard" destination="LfA-FZ-SF8" collectionClass="NSMutableArray" id="Pfv-dO-vKk"/>
+                        <outletCollection property="sudokuButtonBoard" destination="7FY-KX-QzC" collectionClass="NSMutableArray" id="2nX-a5-Gyz"/>
+                        <outletCollection property="sudokuButtonBoard" destination="SgT-1y-xmh" collectionClass="NSMutableArray" id="jFJ-jX-miL"/>
+                        <outletCollection property="sudokuButtonBoard" destination="WQ1-Xa-Cha" collectionClass="NSMutableArray" id="IB8-ny-vt5"/>
+                        <outletCollection property="sudokuButtonBoard" destination="Spk-kz-0wa" collectionClass="NSMutableArray" id="KHG-Fv-dFA"/>
+                        <outletCollection property="sudokuButtonBoard" destination="wVs-C9-nQx" collectionClass="NSMutableArray" id="umE-C8-nXy"/>
+                        <outletCollection property="sudokuButtonBoard" destination="VN1-8H-llm" collectionClass="NSMutableArray" id="wJT-x8-4ic"/>
+                        <outletCollection property="sudokuButtonBoard" destination="65d-T9-A34" collectionClass="NSMutableArray" id="Fsx-9H-YNb"/>
+                        <outletCollection property="sudokuButtonBoard" destination="Gel-cl-u2f" collectionClass="NSMutableArray" id="3Db-aI-5f0"/>
+                        <outletCollection property="sudokuButtonBoard" destination="mb5-8m-fhV" collectionClass="NSMutableArray" id="2lk-s4-uh8"/>
+                        <outletCollection property="sudokuButtonBoard" destination="aV7-yb-wkW" collectionClass="NSMutableArray" id="cb3-Kh-Hi3"/>
+                        <outletCollection property="sudokuButtonBoard" destination="L8n-GM-S67" collectionClass="NSMutableArray" id="sbj-BM-VT3"/>
+                        <outletCollection property="userInteractionButtons" destination="pmR-dw-oqj" collectionClass="NSMutableArray" id="jib-ao-pjs"/>
+                        <outletCollection property="userInteractionButtons" destination="buC-oQ-R0y" collectionClass="NSMutableArray" id="tSY-Ja-jRb"/>
+                        <outletCollection property="userInteractionButtons" destination="2u0-Af-AwC" collectionClass="NSMutableArray" id="sA9-E6-xsv"/>
+                        <outletCollection property="userInteractionButtons" destination="dRG-Ba-uin" collectionClass="NSMutableArray" id="6BG-pQ-efr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
+            <point key="canvasLocation" x="137.68115942028987" y="109.23913043478262"/>
         </scene>
     </scenes>
 </document>

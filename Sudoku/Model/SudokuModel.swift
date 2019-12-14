@@ -9,6 +9,10 @@
 import Foundation
 
 struct SudokuModel {
+//    Value of the Cell.
     var values: String
+//    If the cell is selectable
     var selectable: Bool?
+//    If the cell is SELECTED
+    var selected = false
 }
