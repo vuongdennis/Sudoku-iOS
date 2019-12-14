@@ -22,6 +22,8 @@ class ViewController: UIViewController, SudokuGameManagerDelegate {
         sudokuGameManager.delegate = self
         sudokuGameManager.fetchSudoku(level: 1)
     }
+    
+//MARK: - USER Input Functionality
 
 //    Will unselect the cell if you press the background
     @IBAction func backgroundButton(_ sender: UIButton) {
@@ -30,6 +32,7 @@ class ViewController: UIViewController, SudokuGameManagerDelegate {
         }
     }
     
+//    If the user presses a cell on the board
     @IBAction func sudokuButtonBoardPressed(_ sender: UIButton) {
 //        If selectedCell isn't empty. Make the old selected Cell white
         if selectedCell != nil {
@@ -46,6 +49,7 @@ class ViewController: UIViewController, SudokuGameManagerDelegate {
         }
     }
 
+//  If the user presses an input button
     @IBAction func userInteractionButtonPressed(_ sender: UIButton) {
         if selectedCell != nil {
             selectedCell?.setTitle(sender.currentTitle, for: .normal)
