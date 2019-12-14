@@ -23,10 +23,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cvk-Xf-XYL" userLabel="Sudoku View">
-                                <rect key="frame" x="50" y="221" width="314" height="314"/>
+                                <rect key="frame" x="46" y="212" width="322" height="322"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="MFI-Wu-jtV">
-                                        <rect key="frame" x="4" y="4" width="306" height="306"/>
+                                        <rect key="frame" x="8" y="8" width="306" height="306"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="SKZ-zg-Xg3">
                                                 <rect key="frame" x="0.0" y="0.0" width="151" height="306"/>
@@ -327,14 +327,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="MFI-Wu-jtV" firstAttribute="centerX" secondItem="Cvk-Xf-XYL" secondAttribute="centerX" id="GL4-kd-a38"/>
-                                    <constraint firstItem="MFI-Wu-jtV" firstAttribute="centerY" secondItem="Cvk-Xf-XYL" secondAttribute="centerY" id="Shq-Ll-K7h"/>
-                                    <constraint firstAttribute="height" constant="314" id="bw7-E2-Rf0"/>
-                                    <constraint firstAttribute="width" constant="314" id="jzN-aD-SSF"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="MFI-Wu-jtV" secondAttribute="bottom" id="0U2-oE-qjL"/>
+                                    <constraint firstItem="MFI-Wu-jtV" firstAttribute="top" secondItem="Cvk-Xf-XYL" secondAttribute="topMargin" id="XjJ-JR-iRl"/>
+                                    <constraint firstItem="MFI-Wu-jtV" firstAttribute="trailing" secondItem="Cvk-Xf-XYL" secondAttribute="trailingMargin" id="XnF-re-cN8"/>
+                                    <constraint firstItem="MFI-Wu-jtV" firstAttribute="leading" secondItem="Cvk-Xf-XYL" secondAttribute="leadingMargin" id="ywN-Lp-SZV"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Vzc-qI-ub7" userLabel="User Interaction Stack View">
-                                <rect key="frame" x="27" y="585" width="360" height="277"/>
+                                <rect key="frame" x="27" y="560.5" width="360" height="75"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmR-dw-oqj">
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
@@ -395,7 +395,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7K4-Hl-FSN" userLabel="Done">
-                                <rect key="frame" x="184" y="709" width="46" height="71"/>
+                                <rect key="frame" x="187" y="683" width="40" height="30"/>
                                 <state key="normal" title="dONe"/>
                                 <connections>
                                     <action selector="doneButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kUh-Yi-9Tp"/>
@@ -404,19 +404,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7K4-Hl-FSN" secondAttribute="trailing" constant="184" id="3Jb-wv-R4O"/>
+                            <constraint firstItem="Vzc-qI-ub7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="150" id="8iI-ds-B82"/>
+                            <constraint firstItem="7K4-Hl-FSN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="987-WL-AoC"/>
                             <constraint firstItem="y6k-WM-34D" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="EK7-PZ-o1E"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7K4-Hl-FSN" secondAttribute="bottom" constant="82" id="KGE-Xv-YcI"/>
-                            <constraint firstItem="7K4-Hl-FSN" firstAttribute="top" secondItem="Cvk-Xf-XYL" secondAttribute="bottom" constant="174" id="OJ3-Wy-NLW"/>
+                            <constraint firstItem="7K4-Hl-FSN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="250" id="PNv-ix-DLJ"/>
                             <constraint firstItem="y6k-WM-34D" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Qdg-sV-l28"/>
-                            <constraint firstItem="Cvk-Xf-XYL" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-75" id="Ttb-R1-iqf"/>
-                            <constraint firstItem="Vzc-qI-ub7" firstAttribute="top" secondItem="Cvk-Xf-XYL" secondAttribute="bottom" constant="50" id="Wak-oA-gbd"/>
                             <constraint firstItem="y6k-WM-34D" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="WcN-Qz-c37"/>
-                            <constraint firstItem="7K4-Hl-FSN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="184" id="Wh2-4U-lAN"/>
-                            <constraint firstItem="Vzc-qI-ub7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XzU-Vq-2jH"/>
+                            <constraint firstItem="Cvk-Xf-XYL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-75" id="bO7-qO-zHX"/>
                             <constraint firstItem="y6k-WM-34D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bQQ-HV-67Z"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Vzc-qI-ub7" secondAttribute="bottom" id="dSj-mD-Ijj"/>
-                            <constraint firstItem="Cvk-Xf-XYL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ziR-3J-VCT"/>
+                            <constraint firstItem="Cvk-Xf-XYL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fqB-9I-7L1"/>
+                            <constraint firstItem="Vzc-qI-ub7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yy9-YZ-Zlr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
