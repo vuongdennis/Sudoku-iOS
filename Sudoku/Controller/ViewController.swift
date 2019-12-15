@@ -44,29 +44,28 @@ class ViewController: UIViewController, SudokuGameManagerDelegate {
         }
     }
     
-    //MARK: - USER Input Functionality
+//MARK: - USER Input Functionality
 
 //    Will unselect the cell if you press the background
     @IBAction func backgroundButton(_ sender: UIButton) {
+//        If there is a selectedCell, unselect it,
+//        and make it white
         if selectedCell != nil {
             selectedCell?.backgroundColor = .white
+            selectedCell = nil
         }
     }
     
 //    If the user presses a cell on the board
     @IBAction func sudokuButtonBoardPressed(_ sender: UIButton) {
-//        If selectedCell isn't empty. Make the old selected Cell white
-        if selectedCell != nil {
-            selectedCell?.backgroundColor = .white
-        }
-//        If selectedCell is the same as the sender. Meaning the same button pressed.
-//        Make it white
-        if selectedCell == sender {
-            selectedCell?.backgroundColor = .white
-//            If it's different. Orange.
-        } else {
+//        If senderCell is white make it orange'
+//        if orange make it white
+//        if it was white -> orange make it the selectedCell
+        if sender.backgroundColor!.isEqual(UIColor.white) {
+            sender.backgroundColor = .systemOrange
             selectedCell = sender
-            selectedCell?.backgroundColor = .systemOrange
+        } else {
+            sender.backgroundColor = .white
         }
     }
 
@@ -74,7 +73,10 @@ class ViewController: UIViewController, SudokuGameManagerDelegate {
     @IBAction func userInteractionButtonPressed(_ sender: UIButton) {
         if selectedCell != nil {
             selectedCell?.setTitle(sender.currentTitle, for: .normal)
-            selectedCell?.backgroundColor = .white
+//            We can have it so that when a user inputs data onto the board.
+//            It will deselect and make the selected tile white.
+//            selectedCell?.backgroundColor = .white
+//            selectedCell = nil
         }
     }
     

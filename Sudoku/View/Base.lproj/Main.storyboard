@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="cVq-EC-XlY" userLabel="Background Image View">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FadeBackground" translatesAutoresizingMaskIntoConstraints="NO" id="cVq-EC-XlY" userLabel="Background Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6k-WM-34D" userLabel="Background Button">
@@ -453,6 +453,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background2" width="1000" height="1000"/>
+        <image name="FadeBackground" width="1000" height="1000"/>
     </resources>
 </document>
