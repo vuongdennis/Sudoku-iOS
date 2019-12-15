@@ -58,14 +58,21 @@ class ViewController: UIViewController, SudokuGameManagerDelegate {
     
 //    If the user presses a cell on the board
     @IBAction func sudokuButtonBoardPressed(_ sender: UIButton) {
-//        If senderCell is white make it orange'
-//        if orange make it white
-//        if it was white -> orange make it the selectedCell
+//        If there is a selectedCell and sender is not equal to the same cell,
+//        Make the OLD selectedCell white
+        if selectedCell != nil {
+            if selectedCell != sender {
+                selectedCell?.backgroundColor = .white
+            }
+        }
+//        If White -> Orange then selected
+//        If Orange -> White then notSelected
         if sender.backgroundColor!.isEqual(UIColor.white) {
             sender.backgroundColor = .systemOrange
             selectedCell = sender
         } else {
             sender.backgroundColor = .white
+            selectedCell = nil
         }
     }
 
@@ -102,9 +109,6 @@ class ViewController: UIViewController, SudokuGameManagerDelegate {
                 }
             }
         }
-    }
-    
-    func gameLogic(sudokuBoard: [SudokuCellModel]) {
     }
     
     func failedWithError(error: Error) {

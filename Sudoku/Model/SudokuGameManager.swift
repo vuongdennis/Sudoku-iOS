@@ -10,7 +10,6 @@ import Foundation
 
 protocol SudokuGameManagerDelegate {
     func createBoard(sudokuBoardValues: [SudokuCellModel])
-    func gameLogic(sudokuBoard: [SudokuCellModel])
     func failedWithError(error: Error)
 }
 
