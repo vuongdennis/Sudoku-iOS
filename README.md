@@ -1,21 +1,27 @@
 # Sudoku Arcade Style iOS-Application
-This is a native iOS application built using Storyboard in Swift5. Instead of the typical 9x9 Sudoku board, this is a arcadey style of it where the games are short by utilizing a 4x4 board.
+A native iOS application built using Storyboard interface in Swift. Instead of the typical 9x9 Sudoku board, this is a arcadey variant where the games are short by utilizing a 4x4 board.
+
+## How to Run
+Requires a Mac
+1) ```git clone https://github.com/vuongdennis/Sudoku-iOS```
+2) Plug in iOS Device
+3) Select device on Xcode
+4) Run
+5) Allow unauthorized developers on device
+6) Launch Application
 
 ## The Board
-<img src="./images/starting_board.png" width="200px" height="400px">
-The board is being made from an API where it varies from easy, medium and hard. 
+<img src="./images/new_starting.png" width="100px" height="200px">
+The board is being constructed from an API call where the application receives partial data on the board.
 
 ## What does it do?
-Right now, it can only create a Sudoku game board and see whether or not a user is able to solve it. 
+* Input Numbers
+* Check Solution
+* Reset the Board
 
-<img src="./images/ending_board.png" width="200px" height="400px">
+<p float="left">
+<img src="./images/grading_page.png" width="100px" height="200px">
+<img src="./images/play.png" width="100px" height="200px">
+ </p>
 
-In the future, I would like to add more functionality.
 
-The Functionalities Include:
-* Scoreboard Tracker
-* Shop
-  * Background Images
-  * Different Color Selection Highlights
-  * Different Sounds
-* A fast arcade style timer where it sees how many boards a user can finish in a given time frame
