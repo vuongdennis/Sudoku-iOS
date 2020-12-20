@@ -8,19 +8,21 @@
 
 import UIKit
 
-class ViewController: UIViewController, SudokuGameManagerDelegate {
+class BoardViewController: UIViewController, SudokuGameManagerDelegate {
 
     @IBOutlet var sudokuButtonBoard: [UIButton]!
     @IBOutlet var userInteractionButtons: [UIButton]!
     
     var sudokuGameManager = SudokuGameManager()
+    var reset = ResultsViewController()
     var selectedCell: UIButton?
+    var win = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         sudokuGameManager.delegate = self
-        sudokuGameManager.fetchSudoku(level: 1)
+        sudokuGameManager.fetchSudoku(level: 2)
     }
     
     @IBAction func doneButtonPressed(_ sender: UIButton) {
@@ -38,10 +40,27 @@ class ViewController: UIViewController, SudokuGameManagerDelegate {
         }
         
         if sudokuGameManager.gameLogic(board: updatedBoard) == true {
-            print("Success")
+            win = true
         } else {
-            print("fail")
+            win = false
         }
+        
+        self.performSegue(withIdentifier: "goToResult", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToResult" {
+            let destinationVC = segue.destination as! ResultsViewController
+            if win {
+                destinationVC.results = "Success"
+            } else {
+                destinationVC.results = "Try Again"
+            }
+        }
+    }
+    
+    @IBAction func newBoardPressed(_ sender: UIButton) {
+        sudokuGameManager.fetchSudoku(level: 2)
     }
     
 //MARK: - USER Input Functionality
@@ -90,11 +109,11 @@ class ViewController: UIViewController, SudokuGameManagerDelegate {
 //MARK: - SudokuGameManagerDelegate functions
     
     func createBoard(sudokuBoardValues: [SudokuCellModel]) {
-        //        DispatchQueue tells it to go onto the next step as it updates in the background
+        //DispatchQueue tells it to go onto the next step as it updates in the background
         DispatchQueue.main.async {
             for i in 0...15 {
                 self.sudokuButtonBoard[i].setTitle(sudokuBoardValues[i].values, for: .normal)
-                
+                self.sudokuButtonBoard[i].setTitleColor(.black, for: .normal)
                 //Sees if the cell is selectable.
                 //If so then allow users to be able to click on it.
                 if sudokuBoardValues[i].selectable! {
